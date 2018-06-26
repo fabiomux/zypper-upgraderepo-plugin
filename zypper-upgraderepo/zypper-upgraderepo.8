@@ -1,0 +1,55 @@
+.\" Manpage for zypper-upgraderepo.
+.TH man 8 "08 Jun 2018" "1.0.0" "zypper-upgraderepo man page"
+.SH NAME
+zypper-upgraderepo \- check and upgrade the repository list
+.SH SYNOPSIS
+zypper upgraderepo <operation> [<options>]
+.SH DESCRIPTION
+zypper-upgraderepo helps to check and upgrade the repository list
+  in order to provide a smoother way during the upgrading procedure 
+  from command line, but is also useful to detect problems during regular
+  updating operations.
+.SH OPERATIONS
+.TP
+.B  -b, --backup PATH
+Backup all the repository folder under the specified PATH.
+.TP
+.B  -c, --check-current
+Check the availability for the installed repositories.
+.TP
+.B  -N, --check-next
+Check the availability for the next version of installed repositories.
+.TP
+.B  -C, --check-to VERSION
+Check the availability for the given VERSION of openSUSE repositories.
+.TP
+.B  -u, --upgrade
+Upgrade the repositories to the next version, root permissions required.
+.TP
+.B  -U, --upgrade-to VERSION
+Upgrade the repositories to the given VERSION, root permissions required.
+.SH OPTIONS
+.TP
+.B  --[no-]only-enabled
+Include or not the disabled repositories from checking or upgrading. By default only 
+enabled repositories are checked or upgraded.
+.TP
+.B --override-url NUMBER,URL
+Override the URL for the repository referenced by NUMBER in the checking table.
+.TP
+.B  --[no-]name
+Upgrade or not the repository's name. Upgrade by default. 
+.TP
+.B  --[no-]alias
+Upgrade or not the repository's alias. Upgrade by default.
+.TP
+.B  --[no-]hint
+When a repository url is not found, it tries to find an alternative URL. Enabled by default.
+.SH RETURN VALUE
+zypper upgraderepo returns 0 on success, 1 if some error occurred.
+.SH SEE ALSO
+zypper(8)
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Fabio Mucciante <fabio.mucciante@gmail.com>
