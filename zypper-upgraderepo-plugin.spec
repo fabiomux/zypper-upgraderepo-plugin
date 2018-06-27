@@ -21,7 +21,8 @@ Release:        0
 %define mod_name zypper-upgraderepo
 %define mod_full_name %{mod_name}-%{version}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-Requires:       rubygem-zypper-upgraderepo
+Requires:       rubygem(zypper-upgraderepo)
+Requires:       zypper >= 1.13.10
 Url:            https://github.com/fabiomux/zypper-upgraderepo-plugin
 Source:         zypper-upgraderepo.tgz
 Summary:        Zypper addon to check and upgrade repositories
@@ -44,8 +45,9 @@ install -m 644 zypper-upgraderepo.8 %{buildroot}/%{_mandir}/man8/
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/zypper/commands/zypper-upgraderepo
-%{_mandir}/man8/zypper-upgraderepo.8.gz
+/usr/lib/zypper
+/usr/lib/zypper/commands
+%{_mandir}/man8/*
 
 
 %changelog
