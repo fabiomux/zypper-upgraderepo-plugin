@@ -34,6 +34,11 @@ Read the man page with:
 $ zypper help upgraderepo
 ```
 
+For a quick help:
+```
+$ zypper upgraderepo --help
+```
+
 All the commands available as `zypper-upgraderepo <options>` are now available as `zypper upgraderepo <options>`.
 
 ## More help
