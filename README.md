@@ -8,7 +8,7 @@ This project can be easily installed as a normal RPM package from
 
 Add the repository using the right version:
 ```
-$ sudo zypper ar https://build.opensuse.org/package/show/home:FabioMux/openSUSE_Leap_42.3/home:FabioMux.repo
+$ sudo zypper ar https://download.opensuse.org/repositories/home:/FabioMux/openSUSE_Leap_42.3/home:FabioMux.repo
 ```
 
 Install the rpm:
