@@ -1,5 +1,5 @@
 .\" Manpage for zypper-upgraderepo.
-.TH man 8 "08 Jun 2018" "1.0.0" "zypper-upgraderepo man page"
+.TH man 8 "20 Dec 2018" "1.2.0" "zypper-upgraderepo man page"
 .SH NAME
 zypper-upgraderepo \- check and upgrade the repository list
 .SH SYNOPSIS
@@ -30,21 +30,41 @@ Upgrade the repositories to the next version, root permissions required.
 Upgrade the repositories to the given VERSION, root permissions required.
 .SH OPTIONS
 .TP
-.B  --[no-]only-enabled
-Include or not the disabled repositories from checking or upgrading. By default only 
-enabled repositories are checked or upgraded.
+.B  --only-enabled
+Include only the enabled repositories to check or upgrade. By default all
+repositories are included.
 .TP
-.B --override-url NUMBER,URL
+.B  --only-repo NUMBER[,NUMBER2,...]
+Include only the repositories specified by their number during  the check or
+upgrade operation.
+.TP
+.B  --override-url NUMBER,URL
 Override the URL for the repository referenced by NUMBER in the checking table.
 .TP
-.B  --[no-]name
-Upgrade or not the repository's name. Upgrade by default. 
+.B  --no-name
+Don't upgrade the repository's name.
 .TP
-.B  --[no-]alias
-Upgrade or not the repository's alias. Upgrade by default.
+.B  --no-alias
+Don't upgrade repository's alias.
 .TP
-.B  --[no-]hint
-When a repository url is not found, it tries to find an alternative URL. Enabled by default.
+.B  --no-hint
+Don't look for an alternative url when the interpolated one is not found.
+.TP
+.B  --timeout SECONDS
+Adjust the waiting SECONDS before to raise a server timeout error.
+.SH VIEW OPTIONS
+.TP
+.B  --sort-by-alias
+Sort the repositories by alias (Default)
+.TP
+.B  --sort-by-name
+Sort the repositories by name
+.TP
+.B  --sort-by-priority
+Sort the repositories by priority
+.TP
+.B  --report
+Show the data as report
 .SH RETURN VALUE
 zypper upgraderepo returns 0 on success, 1 if some error occurred.
 .SH SEE ALSO
