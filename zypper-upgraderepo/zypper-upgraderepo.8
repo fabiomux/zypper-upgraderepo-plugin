@@ -5,14 +5,15 @@ zypper-upgraderepo \- check and upgrade the repository list
 .SH SYNOPSIS
 zypper upgraderepo <operation> [<options>]
 .SH DESCRIPTION
+.PP
 zypper-upgraderepo helps to check and upgrade the repository list
-  in order to provide a smoother way during the upgrading procedure 
-  from command line, but is also useful to detect problems during regular
-  updating operations.
+in order to provide a smoother way during the upgrading procedure
+from command line, but is also useful to detect problems during regular
+updating operations.
 .SH OPERATIONS
 .TP
 .B  -b, --backup PATH
-Backup all the repository folder under the specified PATH.
+Create an archive containing the repository folder under the specified PATH.
 .TP
 .B  -c, --check-current
 Check the availability for the installed repositories.
@@ -23,23 +24,15 @@ Check the availability for the next version of installed repositories.
 .B  -C, --check-to VERSION
 Check the availability for the given VERSION of openSUSE repositories.
 .TP
+.B  -R, --reset
+Reset the upgraded repositories to the current OS version, root permissions required.
+.TP
 .B  -u, --upgrade
 Upgrade the repositories to the next version, root permissions required.
 .TP
 .B  -U, --upgrade-to VERSION
 Upgrade the repositories to the given VERSION, root permissions required.
 .SH OPTIONS
-.TP
-.B  --only-enabled
-Include only the enabled repositories to check or upgrade. By default all
-repositories are included.
-.TP
-.B  --only-repo NUMBER[,NUMBER2,...]
-Include only the repositories specified by their number during  the check or
-upgrade operation.
-.TP
-.B  --override-url NUMBER,URL
-Override the URL for the repository referenced by NUMBER in the checking table.
 .TP
 .B  --no-name
 Don't upgrade the repository's name.
@@ -50,23 +43,81 @@ Don't upgrade repository's alias.
 .B  --no-hint
 Don't look for an alternative url when the interpolated one is not found.
 .TP
+.B  --override-url NUMBER,URL
+Override the URL for the repository referenced by NUMBER in the checking table.
+.TP
+.B  --load-overrides FILENAME
+Load the URLs to override from FILENAME
+.TP
+.B  --exit-on-fail
+Exit with a properly runlevel when an error is met.
+.TP
 .B  --timeout SECONDS
 Adjust the waiting SECONDS before to raise a server timeout error.
+.SH FILTER OPTIONS
+.TP
+.B  --only-enabled
+Include only the enabled repositories to check or upgrade. By default all
+repositories are included.
+.TP
+.B  --only-repo NUMBER[,NUMBER2,...]
+Include only the repositories specified by their number during  the check or
+upgrade operation.
+.TP
+.B  --only-invalid
+Show only invalid repositories.
 .SH VIEW OPTIONS
 .TP
 .B  --sort-by-alias
-Sort the repositories by alias (Default)
+Sort the repositories by alias (Default).
 .TP
 .B  --sort-by-name
-Sort the repositories by name
+Sort the repositories by name.
 .TP
 .B  --sort-by-priority
-Sort the repositories by priority
+Sort the repositories by priority.
+.TP
+.B  --ini
+Show the output as ini format.
+.TP
+.B  --quiet
+Show only error messages.
 .TP
 .B  --report
-Show the data as report
-.SH RETURN VALUE
-zypper upgraderepo returns 0 on success, 1 if some error occurred.
+Show the output as report.
+.PP
+The \fB\-\-override\-url\fR option can appear as many times as needed however, exporting the
+list of invalid repos with \fB\-\-only\-invalid\fR and the \fB\-\-ini\fR option makes the whole
+process more comfortable.
+The list of overriden URLs can be imported with the \fB\-\-load-overrides\fR option.
+.SS Exit Status:
+.TP
+0
+all OK,
+.TP
+1
+general error,
+.TP
+2
+the system is already upgraded,
+.TP
+4
+not valid permissions while writing the repositories,
+.TP
+5
+a package management application is running,
+.TP
+6
+no connection,
+.TP
+7
+can't find an alternative URL,
+.TP
+8
+an override URL is missing in the ini file,
+.TP
+9
+the old_url field in the ini file doesn't match with the real repo URL.
 .SH SEE ALSO
 zypper(8)
 .SH BUGS
