@@ -16,7 +16,7 @@
 #
 
 Name:           zypper-upgraderepo-plugin
-Version:        1.2.0
+Version:        1.4.0
 Release:        0
 %define mod_name zypper-upgraderepo
 %define mod_full_name %{mod_name}-%{version}
