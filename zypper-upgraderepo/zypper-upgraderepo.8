@@ -16,13 +16,16 @@ updating operations.
 Create an archive containing the repository folder under the specified PATH.
 .TP
 .B  -c, --check-current
-Check the availability for the installed repositories.
+Check for the availability of the current repositories.
 .TP
-.B  -N, --check-next
-Check the availability for the next version of installed repositories.
+.B  -n, --check-next
+Check for the availability of the next version repositories.
 .TP
-.B  -C, --check-to VERSION
-Check the availability for the given VERSION of openSUSE repositories.
+.B  -l, --check-last
+Check for the availability of the last version repositories.
+.TP
+.B  -C, --check-for VERSION
+Check for the availability of the given repositories VERSION.
 .TP
 .B  -R, --reset
 Reset the upgraded repositories to the current OS version, root permissions required.
@@ -32,7 +35,17 @@ Upgrade the repositories to the next version, root permissions required.
 .TP
 .B  -U, --upgrade-to VERSION
 Upgrade the repositories to the given VERSION, root permissions required.
+.TP
+.B  -L, --upgrade-to-last
+Upgrade the repositories to the last version, root permissions required.
+.TP
+.B  -s, --status
+Print the version status of the current and available openSUSE releases.
+.TP
 .SH OPTIONS
+.TP
+.B  --allow-unstable
+Consider the unstable version a stable release to upgrade to.
 .TP
 .B  --no-name
 Don't upgrade the repository's name.
@@ -66,6 +79,9 @@ upgrade operation.
 .TP
 .B  --only-invalid
 Show only invalid repositories.
+.TP
+.B --only-protocols <PROTOCOL>[,<PROTOCOL2>,...]
+Include only the repositories having their protocol matching the list (i.e. https,http,dir)
 .SH VIEW OPTIONS
 .TP
 .B  --sort-by-alias
@@ -117,7 +133,11 @@ can't find an alternative URL,
 an override URL is missing in the ini file,
 .TP
 9
-the old_url field in the ini file doesn't match with the real repo URL.
+the old_url field in the ini file doesn't match with the real repo URL;
+.TP
+11
+no unstable version is available.
+.TP
 .SH SEE ALSO
 zypper(8)
 .SH BUGS
