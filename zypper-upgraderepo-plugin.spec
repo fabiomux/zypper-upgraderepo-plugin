@@ -1,5 +1,5 @@
 #
-# spec file for package rubygem-zypper-upgraderepo
+# spec file for package zypper-upgraderepo-plugin
 #
 # Copyright (c) 2018 SUSE LINUX GmbH, Nuernberg, Germany.
 #
