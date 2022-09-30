@@ -50,11 +50,11 @@ as `zypper-upgraderepo ...` are available as `zypper upgraderepo ...`.
 ## More help
 
 More info is available at:
-- the [ZypperUpgraderepo GitHub wiki][zypper_upgraderepo_wiki];
+- the [Zypper-Upgraderepo GitHub wiki][zypper_upgraderepo_wiki];
 - the article [Upgrading with Zypper][upgrading_with_zypper] on Freeaptitude blog.
 
 
-[project_page]: https://freeaptitude.altervista.org/projects/zypper-upgraderep.html "ZypperUpgraderepo project page"
+[project_page]: https://freeaptitude.altervista.org/projects/zypper-upgraderepo.html "Zypper-Upgraderepo project page"
 [upgrading_with_zypper]: https://freeaptitude.altervista.org/articles/upgrading-opensuse-with-zypper.html "Upgrading openSUSE with Zypper"
-[zypper_upgraderepo]: https://github.com/fabiomux/zypper-upgraderepo "ZypperUpgraderepo GitHub page"
-[zypper_upgraderepo_wiki]: https://github.com/fabiomux/zypper-upgraderepo/wiki "zypper-upgraderepo wiki page on GitHub"
+[zypper_upgraderepo]: https://github.com/fabiomux/zypper-upgraderepo "Zypper-Upgraderepo GitHub page"
+[zypper_upgraderepo_wiki]: https://github.com/fabiomux/zypper-upgraderepo/wiki "Zypper-Upgraderepo wiki page on GitHub"
