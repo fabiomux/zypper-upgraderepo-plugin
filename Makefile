@@ -1,3 +1,4 @@
 tgz:
-	tar -czvf zypper-upgraderepo.tgz ./zypper-upgraderepo
+	@tar -czvf zypper-upgradedistro-$(shell grep 'man 8' './zypper-upgraderepo/zypper-upgraderepo.8' | cut -f 4 -d '"').tgz ./zypper-upgraderepo
+	@echo 'Archive ready!'
 
