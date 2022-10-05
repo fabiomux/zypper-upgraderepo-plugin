@@ -24,7 +24,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Requires:       rubygem(zypper-upgraderepo)
 Requires:       zypper >= 1.13.10
 Url:            https://github.com/fabiomux/zypper-upgraderepo-plugin
-Source:         zypper-upgraderepo.tgz
+Source:         %{mod_full_name}.tgz
 Summary:        Zypper addon to check and upgrade repositories
 License:        GPL-3.0
 Group:          System/Packages
