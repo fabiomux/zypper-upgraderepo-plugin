@@ -1,6 +1,6 @@
 #!/bin/bash
 export ZYPPER_UPGRADEREPO=1
-zypper-upgraderepo $@
+upgraderepo "$@"
 res=$?
 unset ZYPPER_UPGRADEREPO
 exit $res
