@@ -1,5 +1,5 @@
 .\" Manpage for zypper-upgraderepo.
-.TH man 8 "28 Sept 2022" "1.6.0" "zypper-upgraderepo man page"
+.TH man 8 "31 Jan 2023" "1.8.0" "zypper-upgraderepo man page"
 .SH NAME
 zypper-upgraderepo \- check and upgrade the repository list
 .SH SYNOPSIS
@@ -29,6 +29,9 @@ Check for the availability of the given repositories VERSION.
 .TP
 .B  -R, --reset
 Reset the upgraded repositories to the current OS version, root permissions required.
+.TP
+.B  -t, --update
+Update the repositories to the current OS version
 .TP
 .B  -u, --upgrade
 Upgrade the repositories to the next version, root permissions required.
@@ -73,9 +76,9 @@ Adjust the waiting SECONDS before to raise a server timeout error.
 Include only the enabled repositories to check or upgrade. By default all
 repositories are included.
 .TP
-.B  --only-repo NUMBER[,NUMBER2,...]
-Include only the repositories specified by their number during  the check or
-upgrade operation.
+.B  --only-repo <NUMBER|NAME|@ALIAS|#URL|&ANY>[,NUMBER2|NAME2|@ALIAS2|#URL2|&ANY2,...]
+Include only the repositories specified by a NUMBER or a string matching the
+NAME, @ALIAS, #URL, or &ANY of them
 .TP
 .B  --only-invalid
 Show only invalid repositories.
