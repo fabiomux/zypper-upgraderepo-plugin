@@ -3,7 +3,8 @@ clean:
 	@rm *.tgz
 	@echo 'Cleanup done!'
 tgz:
-	@tar -czvf zypper-upgraderepo-$(shell grep 'man 8' './zypper-upgraderepo/zypper-upgraderepo.8' | cut -f 4 -d '"').tgz ./zypper-upgraderepo
+	@tar --exclude=*.swp \
+	     -czf zypper-upgraderepo-$(shell grep 'man 8' './zypper-upgraderepo/zypper-upgraderepo.8' | cut -f 4 -d '"').tgz ./zypper-upgraderepo
 	@echo 'Archive ready!'
 install:
 	@sudo install -m 755 ./zypper-upgraderepo/zypper-upgraderepo /usr/lib/zypper/commands/
