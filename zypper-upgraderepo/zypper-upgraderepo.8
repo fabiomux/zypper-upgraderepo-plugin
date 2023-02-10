@@ -97,19 +97,23 @@ Sort the repositories by name.
 Sort the repositories by priority.
 .TP
 .B  --ini
-Show the output as ini format.
+Show the output as INI format.
 .TP
 .B  --quiet
 Show only error messages.
 .TP
 .B  --report
 Show the output as report.
+.TP
+.B  --solved
+Show the output as INI format, automatically replacing the suggested, alternative, URLs
+when available.
 .PP
 The \fB\-\-override\-url\fR option can appear as many times as needed however, exporting the
 list of invalid repos with \fB\-\-only\-invalid\fR and the \fB\-\-ini\fR option makes the whole
 process more comfortable.
 The list of overriden URLs can be imported with the \fB\-\-load-overrides\fR option.
-.SS Exit Status:
+.SH EXIT STATUS
 .TP
 0
 all OK,
@@ -136,11 +140,10 @@ can't find an alternative URL,
 an override URL is missing in the ini file,
 .TP
 9
-the old_url field in the ini file doesn't match with the real repo URL;
+the old_url field in the ini file doesn't match with the real repo URL,
 .TP
 11
 no unstable version is available.
-.TP
 .SH SEE ALSO
 zypper(8)
 .SH BUGS
