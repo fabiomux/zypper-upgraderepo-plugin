@@ -5,8 +5,7 @@ to check and upgrade repositories.
 
 ## Installation
 
-There are several options to install the service menus listed in this repository.
-
+There are several options to install this plugin.
 
 ### From the openSUSE Build Service repository
 
@@ -20,9 +19,28 @@ in the related [project page][project_page] on Freeaptitude blog.
 
 Installing this plugin the package *rubygem-zypper-upgraderepo* will be automatically selected.
 
+### Cloning this repo
+
+After cloning the repo:
+```shell
+$ git clone https://github.com/fabiomux/zypper-upgraderepo-plugin.git
+```
+
+To install, execute the command:
+```shell
+$ make install
+```
+
+And to uninstall:
+```shell
+$ make uninstall
+```
+
+Make sure to have the *zypper-upgraderepo* gem installed, or install it manually.
+
 ## Usage
 
-To run the default check scan:
+Any operaton performed with *zypper-upgraderepo* gem is now available as:
 ```
 $ zypper upgraderepo [<operation>] [<options>]
 ```
@@ -43,9 +61,6 @@ For a quick help:
 ```
 $ zypper upgraderepo --help
 ```
-
-With this plugin all the commands mentioned in the [wiki page][zypper_upgraderepo_wiki] available
-as `zypper-upgraderepo ...` are available as `zypper upgraderepo ...`.
 
 ## More help
 
