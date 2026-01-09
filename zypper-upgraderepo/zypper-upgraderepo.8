@@ -1,5 +1,5 @@
 .\" Manpage for zypper-upgraderepo.
-.TH man 8 "31 Jan 2023" "1.8.0" "zypper-upgraderepo man page"
+.TH man 8 "31 Jan 2023" "1.12.0" "zypper-upgraderepo man page"
 .SH NAME
 zypper-upgraderepo \- check and upgrade the repository list
 .SH SYNOPSIS
@@ -45,6 +45,11 @@ Upgrade the repositories to the last version, root permissions required.
 .B  -s, --status
 Print the version status of the current and available openSUSE releases.
 .TP
+.B  -d, --duplicates
+Detect the duplicates comparing the URL addresses
+.TP
+.B  -z, --unused
+Prints the unused repositories with zero packages installed
 .SH OPTIONS
 .TP
 .B  --allow-unstable
@@ -85,6 +90,9 @@ Show only invalid repositories.
 .TP
 .B --only-protocols <PROTOCOL>[,<PROTOCOL2>,...]
 Include only the repositories having their protocol matching the list (i.e. https,http,dir)
+.TP
+.B --only-used
+Show only used repositories
 .SH VIEW OPTIONS
 .TP
 .B  --sort-by-alias
@@ -143,7 +151,10 @@ an override URL is missing in the ini file,
 the old_url field in the ini file doesn't match with the real repo URL,
 .TP
 11
-no unstable version is available.
+no unstable version is available,
+.TP
+16
+CPU not supported for the next upgrade because of x86_64-v2 instructions missing.
 .SH SEE ALSO
 zypper(8)
 .SH BUGS
